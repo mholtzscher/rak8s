@@ -28,6 +28,7 @@
 - name: "Remove pod logging"
   shell: rm -rf /var/log/pods/* 
   become: True
+  warn: False
 
 - name: Reboot
   shell: sleep 2 && shutdown -r now "Ansible Reboot"
