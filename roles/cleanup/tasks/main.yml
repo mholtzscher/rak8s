@@ -28,7 +28,6 @@
 - name: "Remove pod logging"
   shell: rm -rf /var/log/pods/* 
   become: True
-  warn: False
 
 - name: Reboot
   shell: sleep 2 && shutdown -r now "Ansible Reboot"
@@ -41,7 +40,7 @@
   args:
     host: "{{ inventory_hostname }}"
     port: 22
-    delay: 15
-    timeout: 120
+    delay: 20
+    timeout: 180
   become: False
 
